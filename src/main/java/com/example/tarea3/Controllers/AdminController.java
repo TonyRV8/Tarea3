@@ -46,31 +46,29 @@ public class AdminController {
         return "editar_usuario"; // Cambiar la vista
     }
 
-
-
     // Guardar cambios en usuario
     @PostMapping("/usuarios/editar/{id}")
-public String actualizarUsuario(
-        @PathVariable Long id,
-        @ModelAttribute Usuario usuarioForm,
-        @RequestParam(required = false) String password) {
-    
-    Usuario usuario = usuarioService.obtenerPorId(id);
-    if (usuario == null) {
+    public String actualizarUsuario(
+            @PathVariable Long id,
+            @ModelAttribute Usuario usuarioForm,
+            @RequestParam(required = false) String password) {
+
+        Usuario usuario = usuarioService.obtenerPorId(id);
+        if (usuario == null) {
+            return "redirect:/admin/usuarios";
+        }
+
+        // Actualiza solo los campos necesarios
+        usuario.setNombre(usuarioForm.getNombre());
+        usuario.setEmail(usuarioForm.getEmail());
+
+        if (password != null && !password.isEmpty()) {
+            usuario.setPassword(passwordEncoder.encode(password));
+        }
+
+        usuarioService.guardar(usuario);
         return "redirect:/admin/usuarios";
     }
-    
-    // Actualiza solo los campos necesarios
-    usuario.setNombre(usuarioForm.getNombre());
-    usuario.setEmail(usuarioForm.getEmail());
-    
-    if (password != null && !password.isEmpty()) {
-        usuario.setPassword(passwordEncoder.encode(password));
-    }
-    
-    usuarioService.guardar(usuario);
-    return "redirect:/admin/usuarios";
-}
 
     // Eliminar usuario
     @GetMapping("/usuarios/eliminar/{id}")
@@ -78,5 +76,5 @@ public String actualizarUsuario(
         usuarioService.eliminar(id);
         return "redirect:/admin/usuarios";
     }
-    
+
 }
