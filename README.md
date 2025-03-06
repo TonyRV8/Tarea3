@@ -17,18 +17,11 @@ Este proyecto es una aplicación web desarrollada con Spring Boot que implementa
 
 ## Instalación y ejecución local
 1. Clonar el repositorio
-bashCopygit clone https://github.com/tu-usuario/tarea3.git
-cd tarea3
+
 2. Configurar la base de datos
 Asegúrate de tener PostgreSQL ejecutándose y crea una base de datos llamada basesita:
-sqlCopyCREATE DATABASE basesita;
-O ajusta las credenciales en src/main/resources/application.properties según tu configuración:
-propertiesCopyspring.datasource.url=jdbc:postgresql://localhost:5432/basesita
-spring.datasource.username=postgres
-spring.datasource.password=root
-3. Compilar y ejecutar la aplicación
-bashCopymvn clean install
-mvn spring-boot:run
+
+3. Compilar y ejecutar la aplicación con mvn spring-boot:run
 La aplicación estará disponible en http://localhost:5173
 
 
@@ -94,7 +87,7 @@ La aplicación tiene dos tipos de roles:
    - Editar cualquier usuario
    - Eliminar usuarios
 
-##Capturas de pantalla
+## Capturas de pantalla
 Pagina de Login
 ![image](https://github.com/user-attachments/assets/59c6d55c-af4d-4254-aa5b-dde49ae768a7)
 
