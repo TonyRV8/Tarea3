@@ -15,13 +15,14 @@ Este proyecto es una aplicación web desarrollada con Spring Boot que implementa
 - Interfaz de usuario responsive con Bootstrap y Thymeleaf
 - Persistencia de datos con PostgreSQL
 
-## Instalación y ejecución local
+## Instalación y ejecución LOCAL
 1. Clonar el repositorio
 
 2. Configurar la base de datos
 Asegúrate de tener PostgreSQL ejecutándose y crea una base de datos llamada basesita:
+Para crear la base, usar el schema.sql que está en este repositorio
 
-3. Compilar y ejecutar la aplicación con mvn spring-boot:run
+4. Compilar y ejecutar la aplicación con mvn spring-boot:run
 La aplicación estará disponible en http://localhost:5173
 
 
