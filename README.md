@@ -1,4 +1,4 @@
-# Tarea 3
+# Proyecto individual
 # Sistema de Gestión de Usuarios - Spring Boot
 
 Este proyecto es una aplicación web desarrollada con Spring Boot que implementa un sistema de gestión de usuarios con autenticación, registro y control de acceso basado en roles. La aplicación permite a los usuarios registrarse, iniciar sesión, editar su perfil y, en el caso de administradores, gestionar a todos los usuarios del sistema.
@@ -10,7 +10,7 @@ Este proyecto es una aplicación web desarrollada con Spring Boot que implementa
 - Perfiles de usuario y administrador
   **Por defecto se tiene de administrador
      usuario: Antonio
-     contraseña: 123456**
+     contraseña: 12345**
 - Gestión completa de usuarios (CRUD) para administradores
 - Interfaz de usuario responsive con Bootstrap y Thymeleaf
 - Persistencia de datos con PostgreSQL
